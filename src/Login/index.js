@@ -12,7 +12,7 @@ class Login extends Component {
 
 //state: an object that is owned by the component where it is declared. Its scope is limited to the current component. A component can initialize its state and update it whenever necessary. The state of the parent component usually ends up being props of the child component. When the state is passed out of the current scope, we refer to it as a prop.
   this.state = { //this initializes username and password's state (data point).
-    username: '', 
+    username: '',
     password: ''
   }
 }
@@ -34,7 +34,13 @@ handleSubmit = (e) => {
 
   //we are calling the login function we creatd in app.js and sent down as props in order to lift our state.
 
+
+//NOTE: =====================
   //However, without app.js lines:   if you click submit you'll get the error 'TypeError: _this.props.login is not a function.' This is b.c you are taking the property for login
+
+  // ========================
+
+  
   this.props.login(this.state.username);
 }
 
